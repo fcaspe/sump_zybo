@@ -14,3 +14,13 @@ With not much effort it should be portable to other Digilent boards based on Xil
 
 Synthesis tested on Vivado 2018.3 and Vivado 2020.1
 
+
+## Synthesis
+
+Clone repo and open Vivado on repo's directory. Then execute the TCL script:
+
+`
+source sump_zybo.tcl
+`
+
+It will create the project, and then synthesize the bitstream.
