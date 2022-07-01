@@ -16,10 +16,10 @@ use ieee.std_logic_unsigned.all;
 
 entity bytewrite_ram_1b is
     generic (
-        SIZE : integer := 32768; --Number of words in RAM
-        ADDR_WIDTH : integer := 15;
+        SIZE : integer := 65536; --Number of words in RAM
+        ADDR_WIDTH : integer := 16;
         COL_WIDTH : integer := 8;
-        NB_COL : integer := 4);
+        NB_COL : integer := 2);
 
     port (
         clk : in std_logic;

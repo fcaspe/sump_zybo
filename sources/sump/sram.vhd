@@ -35,9 +35,9 @@ entity sram is
     -- Generic set for inferred RAM. 
     -- Data here has to match the specified in bytewrite_ram_1b.vhd
     generic (
-        ADDR_WIDTH : integer := 15;
+        ADDR_WIDTH : integer := 16;
         COL_WIDTH : integer := 8;
-        NB_COL : integer := 4);
+        NB_COL : integer := 2);
 
     Port (
 		clock : in  STD_LOGIC;
@@ -64,12 +64,15 @@ signal address : std_logic_vector (ADDR_WIDTH-1 downto 0):= (others => '0');
 signal written_input, written_output : std_logic_vector(15 downto 0);
 begin
     
+    written_input <= input(15 downto 0);
+    output <= "00000000" & "00000000" & written_output;
+    
     memory: bytewrite_ram_1b PORT MAP (
         clk => clock,
         we => write,
         addr => address,
-        di => input, 
-        do => output
+        di => written_input, --only 16 LS bits of the input are written to RAM (Zybo-Z7 verison has only 16 inputs) 
+        do => written_output --only 16 LS bits are fetch from RAM (Zybo-Z7 verison has only 16 inputs)
     );
 
     --process(clk,reset)
@@ -95,4 +98,3 @@ begin
 
 
 end Behavioral;
-

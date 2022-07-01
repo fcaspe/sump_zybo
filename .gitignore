@@ -1,4 +1,4 @@
-./sump_zybo/
+sump_zybo/
 *.log
 *.jou
 *.str
