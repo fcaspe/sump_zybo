@@ -45,4 +45,4 @@ I use [OpenBench LogicSniffer](https://github.com/jawi/ols). The built versions 
     mvn clean install
 
 
-Binaries will be at `ols.distribution/target/ols-0.9.8-SNAPSHOT-full/ols-0.9.8-SNAPSHOT/'
+Binaries will be at `ols.distribution/target/ols-0.9.8-SNAPSHOT-full/ols-0.9.8-SNAPSHOT/`
