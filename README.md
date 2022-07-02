@@ -14,6 +14,14 @@ With not much effort it should be portable to other Digilent boards based on Xil
 
 Synthesis tested on Vivado 2018.3 and Vivado 2020.1
 
+## Pinout
+
+The LA uses the PMOD connectors as logic inputs. Like in the original design, commands and results are transferred over UART at 115200 bps.
+
+![pinout image](doc/pinout.png "").
+
+I use Digilent's [PmodLVSHIFT](https://digilent.com/shop/pmod-lvlshft-logic-level-shifter/) and
+[PmodUSBUART](https://digilent.com/shop/pmod-usbuart-usb-to-uart-interface/) as level converters and UART interface respectively.
 
 ## Synthesis
 
